@@ -1,0 +1,30 @@
+# Environment & secrets
+.env
+.envbrew
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Migrations
+*/migrations/
+
+# Static files
+staticfiles/
+
+# SQLite (if used locally)
+*.sqlite3
+
+# macOS
+.DS_Store
+
+# Editor settings
+.vscode/
+.idea/
+
+# Scratch files
+install
+postgresql@16
