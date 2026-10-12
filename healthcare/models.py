@@ -69,11 +69,6 @@ phone_validator = RegexValidator(
     message="Enter a valid Indian phone number (e.g. '+919876543210' or '9876543210')."
 )
 
-email_validator = RegexValidator(
-    regex=r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
-    message="Enter a valid email address (e.g. 'doctor@example.com')."
-)
-
 
 class Doctor(BaseModel):
     class SpecializationChoices(models.TextChoices):
@@ -91,7 +86,7 @@ class Doctor(BaseModel):
         choices=SpecializationChoices.choices,
         default=SpecializationChoices.GENERAL
     )
-    email = models.EmailField(validators=[email_validator], unique=True, db_index=True)
+    email = models.EmailField(unique=True, db_index=True)
     phone = models.CharField(validators=[phone_validator], max_length=20)
 
     class Meta(BaseModel.Meta):
